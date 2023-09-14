@@ -12,7 +12,7 @@ async def csv_row_generator_pandas(csv_filenames):
         df = pd.read_csv(csv_filename)
         for index, row in df.iterrows():
             yield json.dumps(row.to_dict())
-            await asyncio.sleep(2)
+            await asyncio.sleep(1)
 
 @app.get("/api")
 async def get_data():
